@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/logo.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title class= "title">Te Llevo!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(179, 179, 179);">¿Ya tienes cuenta?</ion-card-subtitle>
+      <ion-card-title class= "tit">Inicia Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      
+      <form [formGroup]="formularioInicio" class= "formularioIni">
+        <ion-item>
+          <ion-label position= "floating">Correo Electrónico</ion-label>
+          <ion-input placeholder="Ingrese correo" formControlName="email" type="email"
+                      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input  type="password" placeholder="Ingrese Cotraseña"
+                      formControlName="password"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-button color="warning" style="align-items: center;"
+                    href="contra" size="small"
+                    expand="block" fill="outline">
+           ¿Olvidaste tu contraseña? 
+        </ion-button>
+        <ion-button [disabled]="formularioInicio.invalid" 
+                    type="submit" expand="block"
+                    (click)="Ingresar()">
+          Ingresar
+        </ion-button>
+
+        <ion-button color="dark" href="registro" expand="block"
+                    fill="outline">
+          Registra tu cuenta
+        </ion-button>
+        
+      </form>
+
+    </ion-card-content>
+
+  </ion-card>  
+
+</ion-content>

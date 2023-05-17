@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/logo.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title class= "title">Te Llevo!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title class= "tit">Nuevos Drivers</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p style="color: rgb(190, 190, 190);">
+        Nuestra comunidad está creciendo cada vez más. Únete y conviertete 
+        en un Driver.</p>
+        <br>
+      <p style="color: rgb(190, 190, 190);">Además de hacer unas luquitas extras 
+        obtendrás prestigios en la App y descuentos en bencineras
+         Petropec.</p>
+         <br>
+      <ion-item href="inputs">
+        <ion-icon style="color: rgb(62, 179, 62);" slot="start" name="car-sport"></ion-icon>
+        <ion-label>Driver In</ion-label>
+        <ion-icon style="color: rgb(62, 179, 62);" slot="end" name="car-sport"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(230, 187, 187);">¿Necesitas un aventón?</ion-card-subtitle>
+      <ion-card-title class="tit">Los Drivers salvan!!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button href="runer" expand="block">Buscar Carreras</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(230, 187, 187);">Tu recuento...</ion-card-subtitle>
+      <ion-card-title class="tit">Prestigios</ion-card-title>        
+    </ion-card-header>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          Good Driver
+        </ion-card-title>
+        <br>
+        <ion-badge style="font-size: 20px;" slot="end">6</ion-badge>
+        <ion-progress-bar buffer="0.9" value="0.72"></ion-progress-bar>
+        <br>
+        <p>Ya casi completas el nivel.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>      
+        <ion-card-title>Good Runner
+        </ion-card-title>
+        <br>
+        <ion-badge style="font-size: 20px;" slot="end">4</ion-badge>
+        <ion-progress-bar buffer="0.2" value="0.2"></ion-progress-bar>
+        <br>
+        <p>Sigue sumando progreso.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button color= "dark" expand="block">Ver más Prestigios</ion-button>
+
+  </ion-card >
+  <br>
+  
+
+</ion-content>

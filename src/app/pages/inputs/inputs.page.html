@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/logo.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+    <ion-title class= "title">Drivers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(179, 179, 179);">Mis Carreras</ion-card-subtitle>
+      <ion-card-title class= "tit">Viajes Realizados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list style="height: 200px;">
+        <ion-item *ngFor="let g of viajes; let indexArray = index" [routerLink]="['/ver-viajes',g.id]">
+          <ion-label> {{ g.destino }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card2">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(179, 179, 179);">Hay quienes te esperan!</ion-card-subtitle>
+      <ion-card-title class= "tit">Runners disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <capacitor-google-map #map></capacitor-google-map>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle style="color: rgb(179, 179, 179);">Quiero ayudar...</ion-card-subtitle>
+      <ion-card-title class= "tit">Registrarme como Driver</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #formularioDriver= "ngForm" (ngSubmit)= "onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Destino</ion-label>
+          <ion-input  type="text" placeholder="Ingrese Dirección"
+                      name="destino" [(ngModel)]="newViaje.destino"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Comuna</ion-label>
+          <ion-input  type="text" placeholder="Ingrese Comuna"
+                      name="comuna" [(ngModel)]="newViaje.comuna"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position= "floating">Capacidad</ion-label>
+          <ion-select name="capacidad" placeholder="Selecionar"
+                      [(ngModel)]= "newViaje.capacidad">
+              <ion-select-option value="1">1 persona</ion-select-option>
+              <ion-select-option value="2">2 personas</ion-select-option>
+              <ion-select-option value="3">3 personas</ion-select-option>
+              <ion-select-option value="4">4 personas</ion-select-option>
+              <ion-select-option value="5">5 personas</ion-select-option>
+              <ion-select-option value="6">6 personas</ion-select-option>
+              <ion-select-option value="+7">+7 personas</ion-select-option>
+          
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Cuota por pasajero</ion-label>
+          <ion-input  type="number" placeholder="Ingrese cuota"
+                      name="cuota" [(ngModel)]="newViaje.cuota"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Hora de salida</ion-label>
+          <ion-input  type="time" placeholder="Ingrese Hora de salida"
+                      name="hora" [(ngModel)]="newViaje.hora"
+                      required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position= "floating">Teléfono celular</ion-label>
+          <ion-input type="tel" placeholder=""
+                     name= "telefono" [(ngModel)]= "newViaje.telefono"
+                     value="custom" maxlength="9" minlength="9"
+                     required>+(56)</ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Patente vehículo</ion-label>
+          <ion-input type="text" placeholder="Ingrese patente"
+                      name="patente" [(ngModel)]="newViaje.patente"
+                      required maxlength="6" minlength="6"></ion-input>
+        </ion-item>
+
+        <ion-button [disabled]="formularioDriver.invalid" 
+                    type="submit" expand="block"
+                    (click)="crearViaje()" [routerLink]="['/card']" color="dark">
+          Ingresar
+        </ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  
+
+
+</ion-content>

@@ -1,0 +1,64 @@
+{
+  "viajes": [
+    {
+      "id": 1,
+      "destino": "German Garces 1537",
+      "comuna": "Maipu",
+      "capacidad": "4",
+      "cuota": 1500,
+      "hora": "16:30",
+      "telefono": 948701337,
+      "patente": "XWJF56"
+    },
+    {
+      "id": 2,
+      "destino": "nahuelhuapi 427",
+      "comuna": "Maipu",
+      "capacidad": "4",
+      "cuota": 1300,
+      "hora": "19:20",
+      "telefono": 984455223,
+      "patente": "JHWX54"
+    },
+    {
+      "destino": "Dirección viaje",
+      "comuna": "Comuna viaje",
+      "capacidad": "capacidad",
+      "cuota": 999,
+      "hora": "19:30",
+      "telefono": "948700114",
+      "patente": "XDFH23",
+      "id": 3
+    },
+    {
+      "destino": "av 5 abril 5544",
+      "comuna": "maipú",
+      "capacidad": "3",
+      "cuota": 8123,
+      "hora": "19:30",
+      "telefono": "948700114",
+      "patente": "XDFH23",
+      "id": 4
+    },
+    {
+      "destino": "Dirección viaje",
+      "comuna": "Comuna viaje",
+      "capacidad": "capacidad",
+      "cuota": 999,
+      "hora": "19:30",
+      "telefono": "948700114",
+      "patente": "XDFH23",
+      "id": 5
+    },
+    {
+      "destino": "santa lucia",
+      "comuna": "manhatan",
+      "capacidad": "3",
+      "cuota": 1500,
+      "hora": "22:34",
+      "telefono": "984526654",
+      "patente": "WSSD34",
+      "id": 6
+    }
+  ]
+}

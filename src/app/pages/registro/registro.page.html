@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/logo.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title class= "title">Te Llevo!</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+  
+
+  <ion-content>
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-subtitle style="color: rgb(179, 179, 179);;">Unete a nuestra comunidad</ion-card-subtitle>
+        <ion-card-title class= "tit">Registra tus datos</ion-card-title>
+      </ion-card-header>
+
+    <form [formGroup] = formularioRegistro (keyup.enter)="CrearUsuario()" class= "formularioReg"> 
+    
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" placeholder="Ingrese Nombre"
+                  formControlName="nombre">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input type="text" placeholder="Ingrese Apellidos"
+                  formControlName="apellidos">
+        </ion-input>
+      </ion-item>      
+      
+      <ion-item>
+        <ion-label position= "floating">Correo Electónico</ion-label>
+        <ion-input  type="email" placeholder="Ingrese correo"
+                  formControlName="email" 
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input  type="password" placeholder="Ingrese Cotraseña"
+                  formControlName="password">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input  type="password" placeholder="Confirme Cotraseña"
+                  formControlName="conPassword">
+        </ion-input>
+      </ion-item>
+
+      <ion-button  [disabled]="formularioRegistro.invalid"
+                    type="submit" expand="block"
+                    (click)="CrearUsuario()" [routerLink]="['/inicio']">
+          Registrarme
+        </ion-button>
+
+        <ion-button [routerLink]="['/inicio']" expand="block" fill="outline"
+                    color="dark">
+          Ya tengo cuenta
+        </ion-button>
+
+    </form>
+  </ion-card>
+
+  </ion-content>
+

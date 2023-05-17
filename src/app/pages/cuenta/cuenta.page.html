@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/logo.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+    <ion-title class= "title">Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card">
+
+    <ion-card-header>
+      <ion-item>
+        <ion-icon name="person-circle" slot="start"></ion-icon>
+        <ion-card-title class="tit">Mis datos</ion-card-title>
+      </ion-item>      
+    </ion-card-header>
+
+    <ion-list>
+      <br>
+      <ion-card-subtitle style="text-align: center;">Nombres</ion-card-subtitle>
+      <ion-item>
+        <ion-label style="text-align: center;">Andrés Ricardo</ion-label>
+      </ion-item>
+      <br>
+      <ion-card-subtitle style="text-align: center;">Apellidos</ion-card-subtitle>
+      <ion-item>
+        <ion-label style="text-align: center;">Castillo Jiménez</ion-label>
+      </ion-item>
+      <br>
+      <ion-card-subtitle style="text-align: center;">Fecha de nacimiento</ion-card-subtitle>
+      <ion-item>
+        <ion-label style="text-align: center;">2001/03/13</ion-label>
+      </ion-item>
+      <br>
+      <ion-card-subtitle style="text-align: center;">Correo Electrónico</ion-card-subtitle>
+      <ion-item>
+        <ion-label style="text-align: center;
+        ">an.castilloj@duocuc.cl</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-button (click)="presentAlertPrompt()" expand="block"  shape="round">
+    Actualizar mis datos
+  </ion-button>
+  <br>
+  <ion-button (click)="cerrarSesion()" expand="block" shape="round" color="danger">
+    Cerrar Sesión
+  </ion-button>
+
+</ion-content>
